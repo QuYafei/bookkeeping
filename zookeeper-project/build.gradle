@@ -1,0 +1,3 @@
+dependencies {
+    compile group: 'com.101tec', name: 'zkclient', version: '0.10'
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhuohuakeji.dao.StudentDao">
+    <insert id="saveStudent" parameterType="com.zhuohuakeji.entity.Student_entity">
+        INSERT INTO STUDENT(name,sex,age,address)VALUES (#{name},#{sex},#{age},#{address})
+    </insert>
+    <delete id="deleteStudent" parameterType="int">
+        <if test="id>0">
+            DELETE FROM STUDENT WHERE id=#{id}
+        </if>
+    </delete>
+    <update id="updateStudent" parameterType="com.zhuohuakeji.entity.Student_entity">
+            UPDATE STUDENT
+            <trim prefix="set" suffixOverrides=",">
+                <if test="id>0"> id=#{id},</if>
+                <if test="name!=null">name=#{name},</if>
+                <if test="sex!=null">sex=#{sex},</if>
+                <if test="age!=null">age=#{age},</if>
+                <if test="address!=null">address=#{address},</if>
+            </trim>
+        <where>
+            <if test="id>0">
+                id=#{id}
+            </if>
+        </where>
+    </update>
+    <select id="getStudents" resultType="com.zhuohuakeji.entity.Student_entity">
+        SELECT * FROM STUDENT
+    </select>
+</mapper>

@@ -1,0 +1,7 @@
+dependencies {
+    compile('org.springframework.cloud:spring-cloud-starter-feign')
+    // https://mvnrepository.com/artifact/com.netflix.feign/feign-gson
+    compile group: 'com.netflix.feign', name: 'feign-gson', version: '8.18.0'
+    compile project(":bookkeeping-server-api")
+    compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
+}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhuohuakeji.dao.BillsDao">
+    <select id="getAllBillType" resultType="com.zhuohuakeji.entity.Bills">
+        SELECT * FROM bills
+    </select>
+    <select id="byIdGetBill" resultType="com.zhuohuakeji.entity.Bills" >
+        SELECT * FROM bills WHERE id=1
+        <!--<where>-->
+            <!--<if test="id!=0">-->
+              <!--id=#{id}-->
+            <!--</if>-->
+        <!--</where>-->
+    </select>
+    <delete id="deleteBills">
+
+    </delete>
+    <update id="updateBills">
+
+    </update>
+    <insert id="saveBill">
+
+    </insert>
+</mapper>
